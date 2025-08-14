@@ -1,0 +1,39 @@
+Entrega: Miercoles 20/08 a las 23:59:59 debe estar hecho el commit con el TP resuelto
+
+Contador de Autos Entrando/Saliendo (con FPGA)
+
+Objetivo: Diseñar un contador de autos que detecte las entradas y salidas de vehículos utilizando
+dos sensores de cruce y que visualice el número de vehículos en un display de 7 segmentos.
+
+Descripción del ejercicio:
+El proyecto consiste en simular el funcionamiento de un sistema de conteo de autos que ingresan y
+salen de un parqueo o vía de acceso. El sistema está compuesto por dos sensores de cruce
+(simulados mediante switches en la FPGA), un contador visualizado en un display de 7 segmentos y
+un botón de reset para inicializar el contador.
+1. Placa Sugerida: Utilizar la FPGA Xilinx Nexys A7 para la implementación.
+2. Sensores:
+• Se utilizan dos switches para simular los sensores de cruce (S1 y S2).
+• Si el sensor S1 se activa y luego se activa S2, el vehículo se considera como
+entrando.
+• Si el sensor S2 se activa y luego se activa S1, el vehículo se considera como salida.
+3. Secuencia:
+• Se debe contemplar que un vehículo podría empezar a entrar o salir y hacer marcha
+atrás, lo que podría activar un solo sensor (por ejemplo, solo S1) y luego desactivarlo
+sin que el vehículo entre o salga. En este caso, el contador no debe cambiar.
+4. Contador:
+• El contador debe incrementar cuando un vehículo entra y decrecer cuando sale, con
+el número de vehículos mostrado en un display de 7 segmentos. El contador no debe
+exceder los 99 vehículos.
+5. Botón de reset:
+• El sistema debe incluir un botón para resetear el contador a cero.
+6. Las maquinas de estado finito deben usar typedefs (enum). 
+
+Requisitos:
+• Implementación en SystemVerilog.
+• Utilización de la FPGA Nexys A7 y la configuración de los displays de 7 segmentos.
+• El contador debe manejar un máximo de 99 autos.
+
+
+(Opcionales):
+- Parametrizar el numero de digitos de la placa
+- Parametrizar el la base del display/counter (i.e. binario/decimal/hexadecimal)
